@@ -4,13 +4,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import { connectDB, testDB } from './config/db'; //Importing the connectDB function
-// connectDB().catch(err => {
-//   console.log(err.message);
-// }); //Calling the connectDB function
-testDB().catch(err => {
+connectDB().catch(err => {
   console.log(err.message);
-});
-
+}); //Calling the connectDB function
 const PORT = (process.env.PORT || 5000) as number;
 
 app.listen(PORT, () => {
